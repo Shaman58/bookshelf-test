@@ -1,0 +1,21 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookshelf
+    driver-class-name: org.postgresql.Driver
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+springAsyncConfig:
+  corePoolSize: 4
+  maxPoolSize: 10
+  queueCapacity: 50
+  threadNamePrefix: 'AsyncTaskThread::'
+  waitForTasksToCompleteOnShutdown: true
